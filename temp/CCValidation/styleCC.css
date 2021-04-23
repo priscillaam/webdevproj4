@@ -1,0 +1,10 @@
+input, .cc{
+    display: inline-block;
+}
+label .cc{
+    display: block;
+}
+label .ccT {
+    display: inline-block;
+    vertical-align: bottom; 
+}

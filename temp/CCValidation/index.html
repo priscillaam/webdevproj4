@@ -1,1 +1,38 @@
+<!DOCtype html>
+    <head>
+        <title>cc temp</title>
 
+        <link rel="stylesheet" href="styleCC.css">
+
+        
+        
+
+        
+    </head>
+    <body>
+        <div class="ccValidate">
+
+            <div class="cctop">
+                <label class="cc">Credit Card Number</label>
+                <input class="cc" id="ccnum" onkeypress="setCCType(this.value)" type="text" inputmode="numeric"  maxlength="16" placeholder="xxxx xxxx xxxx xxxx"  />
+                <!-- make user not be able to type anything except numbers -->
+                
+                <label class="cc">Security Code</label>
+                <input class="cc" type="tel" inputmode="numeric" name="3dig" />
+            </div>
+            
+            <div class="ccbot">
+                <label class="cc">Name on Card</label>
+                <input type="tel" inputmode="numeric" name="ccname" />
+
+                <label class="cc">Expriation Date</label>
+                <input class="cc" type="text" name="ccexp" />
+            </div>
+            <label class="ccT" id ="ccType"></label>
+        </div>
+        <p>Test out: 4000 0000 0000 0000 // 5200 0000 0000 0000 // 3700 0000 0000 0000 </p> 
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="scriptCC.js"></script>
+        
+    </body>
+</html>
