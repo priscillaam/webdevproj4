@@ -1,1 +1,71 @@
+header {
+  overflow: hidden;
+  display: block;
+  padding: 16px 0;
+  border: solid 2px black;
+  background: transparent;
+  width: 70%;
+  margin: 70px auto;
+}
+.cart a {
+  float: right;
+  padding: 12px 40px;
+  border-right: 1px solid #b4b4b4;
+  color: black;
+}
+.logo a {
+  float: left;
+  padding: 12px 40px;
+  border-right: 1px solid #b4b4b4;
+  color: black;
+}
+nav, nav ul {
+  display: inline-block;
+  list-style: none;
+  margin: 0; 
+  padding: 0
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  margin: 12px 0 0 45px;
+  padding-bottom: 12px;
+  color: black;
+  font-size: 20px;
+}
+nav ul li a:hover {border-bottom: 3px solid black;}
+nav ul li.active a {
+  border-bottom: 3px solid black;
+}
+h1, a {
+  text-decoration: none;
+  outline: none;
+  transition: all .25s ease-in-out;
+}
 
+
+/* flight & parking example product selection */
+.content {
+  width: 50%;
+  margin: 70px auto;
+  
+}
+.ex1 {
+  width: 40%;
+  height: 100px;
+  float: left;
+  border: solid;
+  padding: 12px 40px;
+}
+.ex2 {
+  width: 40%;
+  height: 100px;
+  float: right;
+  border: solid;
+  padding: 12px 40px;
+}
+.content p {
+  font-size: 20px;
+}
