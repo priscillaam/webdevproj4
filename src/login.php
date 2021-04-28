@@ -3,7 +3,7 @@ $email = $password ="";
 if(empty($_POST["email"]) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty($_POST["password"])){
 	
 	 if (empty($_POST["email"])) {
-               $err.="Email empty";
+               $err.="Email empty ";
             }else {
                $email = test_input($_POST["email"]);
                
@@ -18,9 +18,14 @@ if(empty($_POST["email"]) || !filter_var($email, FILTER_VALIDATE_EMAIL) || empty
             }else {
                $password = test_input($_POST["password"]);
             }
- echo '<script>alert("There are some errors: ")</script>'.$err; 
+			 echo '<script>
+			 window.location.href = "both.php";
+			 alert("There are some errors: '.$err.'")</script>'; 
         }
-         
+        
+         else{
+			header("Location:index.html");
+		}
          
          function test_input($data) {
             $data = trim($data);
