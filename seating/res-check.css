@@ -1,0 +1,103 @@
+body{
+text-align: center;
+background-color: black;
+}
+
+
+div.lot-lines{
+	display: inline-flex;
+	flex-direction: row;
+}
+
+div.lot-all{
+	display: inline-flex;
+	flex-direction: column;
+}
+
+div.lot-2line{
+  display:inline-block;
+  column-count:10;
+  column-rule: 3px solid white;
+  margin: 5px;
+  column-gap: 0;
+}
+
+div.lot{
+    border-bottom: 3px solid white;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+div.lot:nth-child(1){
+	border-top: 3px solid white;
+}
+
+div.lot:nth-child(5){
+	border-top: 3px solid white;
+}
+
+
+
+
+div.lot:not(.lot){
+	background-color: rgba(255,0,0,0.5);
+
+}
+
+@keyframes chosen{
+  from {background-color: rgba(0,255,0,0.5);}
+  to {background-color: rgba(255,0,0,0.5);}
+}
+
+@keyframes cancel{
+  from {background-color: currentcolor;}
+   to {background-color: rgba(0,255,0,0.5);}
+}
+
+.resvarea{
+	color:white;
+	text-align: center;
+}
+
+.numres{
+	display: inline-flex;
+	text-align: center;
+}
+
+.checklot{
+	display: inline-block;
+
+    transition-property: background-color;
+    animation-fill-mode: backwards;
+  animation-play-state: paused;
+    height: 100px;
+    width: 100px;
+}
+
+input[type="checkbox"] {
+ display: none;
+}
+
+
+
+label:hover{
+
+   animation: chosen 1s 1;
+
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+input[type="checkbox"]:checked + label{
+  animation: chosen 1s 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+input[type="checkbox"]:not(:checked) + label{
+  color:rgba(0,255,0,0.5);
+  animation: cancel 2s 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
