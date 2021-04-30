@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project 4</title>
+  <link rel="stylesheet" type="text/css" href='../css/style.css'>
+  <br>
+  <br>
+  <center>
+    <a href="index.html" class="button">FLIGHTS</a>
+    <a href="summary.html" class="button">SUMMARY</a>
+    <a href="login.html" class="button">LOGIN</a>
+    <a href="register.html" class="button">REGISTER</a>
+  </center>
+</head>
+<body>
+  <div style="
+  background-image: url('img/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  ">
+  <br>
+  <br>
+  <center>
+    <u><h2>FLIGHT INFORMATION:</h2></u>
+    <h3>One Way Trip | Non-stop</h3>
+    <img alt="ATL - TYO" src="../img/6.jpg">
+    <br>
+    <h3>Total Flight Time: <u>~14 Hours & 30 Minutes</u><h3>
+    <h3>DEPARTURE: Hartsfield-Jackson Atlanta International Airport, Atlanta, Georgia on <u>April 25, 2021 @ 00:30 EST</u></h3>
+    <h3>ARRIVAL: Tokyo International Airport (Haneda Airport), Tokyo, Japan on <u>April 25, 2021 @ 15:00 EST</u></h3>
+    <h2 id="priceGenerator"></h2>
+    <button onclick="chooseSeats()">CHOOSE SEATS</button>
+  </center>
+  <script>
+    getNumber(1500,2100);
+
+    function getNumber(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      number = Math.floor(Math.random() * (max - min + 1) + min);
+      document.getElementById("priceGenerator").innerHTML = "PRICE: $" + number;
+    }
+  </script>
+</body>
+</html>
