@@ -2,7 +2,7 @@
 
          // define variables and set to empty values
          $name = $email = $password = $phone = $err = "";
-         if (empty($_POST["name"]) || empty($_POST["email"]) ||!filter_var($email, FILTER_VALIDATE_EMAIL) || empty($_POST["password"]) ||empty($_POST["phone"]) ||!preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $_POST["phone"])){
+//         if (empty($_POST["name"]) || empty($_POST["email"]) ||!filter_var($email, FILTER_VALIDATE_EMAIL) || empty($_POST["password"]) ||empty($_POST["phone"]) ||!preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $_POST["phone"])){
             if (empty($_POST["name"])) {
                $err.="Name empty ";
             }else {
@@ -37,11 +37,16 @@
         }
 //			 header("Location:both.php");
 //			 exit();
+		if ($err!=""){
 			 echo '<script>
 			 window.location.href = "both.php";
 			 alert("There are some errors: '.$err.'")</script>'; 
         }
 		else{
+			$file= 'users.html';
+			$input=file_get_contents($file);
+			$input .= $email . " " . $password . "\n";
+			file_put_contents($file, $input);
 			header("Location:index.html");
 			exit();
 		}
@@ -53,4 +58,6 @@
             $data = htmlspecialchars($data);
             return $data;
          }
+
+ 
 ?>
