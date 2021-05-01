@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>Project 4</title>
-  <link rel="stylesheet" type="text/css" href='../css/style.css'>
-
+  <link rel="stylesheet" type="text/css" href='style.css'>
+  <br>
+  <br>
+  <center>
+    <a href="index.html" class="button">FLIGHTS</a>
+    <a href="summary.html" class="button">SUMMARY</a>
+    <a href="login.html" class="button">LOGIN</a>
+    <a href="register.html" class="button">REGISTER</a>
+  </center>
 </head>
 <body>
-  <header>
-    <h1 class="logo"><a href="">Ecommerce Site Name</a></h1>
-    <h1 class="cart"><a href="">Cart</a></h1>
-    <nav>
-        <ul>
-            <li class=""><a href="./index.html">Home</a></li>
-            <li class="active"><a href="./flights.html">Flights</a></li>
-            <li><a href="./parking.html">Parking</a></li>
-
-            
-          </ul>
-          
-    </nav>
-    
-  </header>
+  <div style="
+  background-image: url('img/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  ">
+  <br>
   <br>
   <center>
     <u><h2>FLIGHT INFORMATION:</h2></u>
     <h3>One Way Trip | Non-stop</h3>
-    <img alt="ATL - AUH" src="../img/2.jpg">
+    <img alt="ATL - AUH" src="img/2.jpg">
     <br>
     <h3>Total Flight Time: <u>~16 Hours</u><h3>
     <h3>DEPARTURE: Hartsfield-Jackson Atlanta International Airport, Atlanta, Georgia on <u>April 10, 2021 @ 02:30 EST</u></h3>
     <h3>ARRIVAL: Abu Dhabi International Airport, Abu Dhabi - United Arab Emirates on <u>April 10, 2021 @ 18:30 EST</u></h3>
     <h2 id="priceGenerator"></h2>
-    <button onclick="chooseSeats()">CHOOSE YOUR SEAT</button>
+    <br>
+    <a href="seating/res-check.html" class="button">CHOOSE YOUR SEAT</a>
   </center>
   <script>
     getNumber(600,750);
