@@ -70,6 +70,7 @@ function getCities() {
     for ($i = 0; $i < mysqli_num_rows($cityQuery); $i++) {
         $result = mysqli_fetch_array($cityQuery, MYSQLI_ASSOC);
         $city = array();
+        $city['city_id'] = $result['id'];
         $city['cityName'] = $result['city_name'];
         $city['state'] = $result['state'];
         $city['airportCode'] = $result['airport_code'];
