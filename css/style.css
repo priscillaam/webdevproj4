@@ -169,14 +169,14 @@ h1, a, p{
   /* filter: brightness(80%); */
   text-align: left;
 }
-.contain1 .contain2 .contain3, h2 {
+.homeH {
   font-family: sans-serif;
   font-size: 2.5em;
   text-align: left;
   font-weight: 500;
   color: white;
 }
-p, .contain1 .contain2 .contain3 {
+.homeP {
   font-family: sans-serif;
   font-size: 1.5em;
   font-weight: 100;
