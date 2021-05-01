@@ -209,3 +209,33 @@ input {
 .container.right-panel-active .overlay-right {
 	transform: translateX(20%);
 }
+input#personimg {
+	background-image:url("../img/outlinep.png");
+	background-repeat:no-repeat;
+	text-indent:20px;
+	background-position: left;
+}
+input#personimg:focus, input.passimg, input.emailimg, input#phoneimg{
+	background-image:none;
+	text-indent:0px;
+
+}
+
+input.passimg{
+background-image:url("../img/lock.png");
+	background-repeat:no-repeat;
+	text-indent:20px;
+	background-position: left;
+}
+input.emailimg{
+background-image:url("../img/email.png");
+	background-repeat:no-repeat;
+	text-indent:20px;
+	background-position: left;
+}
+input#phoneimg{
+background-image:url("../img/phone.png");
+	background-repeat:no-repeat;
+	text-indent:20px;
+	background-position: left;
+}
