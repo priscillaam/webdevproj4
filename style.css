@@ -1,0 +1,23 @@
+.button {
+  font-size: 20px;
+  padding: 15px;
+  border-color: green;
+  border-style: solid;
+  background-color: skyblue;
+}
+
+body {
+  background-color: lightblue;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: blue;
+}
