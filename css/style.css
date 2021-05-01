@@ -2,12 +2,25 @@
 body {
   background: #f5f5f5;
 }
+/* background banner images for individual pages */
 .homeB {
   background-image: url('../img/home.jpg');
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
-
+.parkB {
+/* 10px  background-repeat: no-repeat; */
+  background-size: 100% auto;
+  background-image: linear-gradient(to top, #f5f5f5 71%, transparent 83%),
+  url('../img/parking.jpg');
+}
+.summaryB {
+  background-image: url('../img/summary.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 45%;
+  /* background-image: linear-gradient(to top, #f5f5f5 71%, transparent 87.5%),
+  url('../img/parking.jpg'); */
+}
 /* header menu selection */
 header {
   overflow: hidden;
@@ -73,15 +86,13 @@ h1, a, p{
 /* styling for main pages content area: parking, flights, home, lots */
 .parking {
   display: block;
-  width: 90%;
-  height: 1500px;
-  margin: 70px auto;
+  width: 85%;
+  height: 750px;
+  margin: 300px auto;
   box-shadow: 0 7px 16px -2px rgba(0,0,0,.3);
-  background-image: linear-gradient(to right, #f5f5f5 40%, transparent 70%),
-  url('../img/parking.jpg');
-    
-  background-repeat: no-repeat; 
-  background-size: cover;  
+  background-color: #37474f;
+  border-radius: 10px 10px 10px 10px; 
+  padding: 40px 80px;
 }
 .flights {
   display: block;
@@ -93,6 +104,16 @@ h1, a, p{
   padding: 12px 40px;
   text-align: center;
 }
+.summary {
+  display: block;
+  width: 75%;
+  height: 750px;
+  margin: 250px auto;
+  box-shadow: 0 7px 16px -2px rgba(0,0,0,.3);
+  background-color: #b6d6c9;
+  border-radius: 15px 15px 15px 15px; 
+}
+
 /* styling for containers in home */
 .contain1 {
   display: block;
@@ -175,21 +196,9 @@ p, .contain1 .contain2 .contain3 {
 }
 
 
-/* text and button secton for main pages */
-.content {
-  float: left;
-  padding: 12px 40px;
-  width: 35%;
-}
-.content h1, h5{
-  text-align: center;
-}
-.booking {
-display: flex;
-justify-content: center;
-padding: 50px 40px;
-}
+/* buttons/ linked "button"  */
 
+ /* home page */
 .containerButton {
   color: white; 
   border: none;
@@ -203,4 +212,73 @@ padding: 50px 40px;
   font-size: 1.3em;
   text-transform: uppercase;
   
+}
+/* amount of tickets */
+.quantity {
+  background-color: white;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  height: 50px;
+  margin: 5px 0px;
+  padding: 0px 24px;
+}
+/* containers for ticket purchase */
+.left {
+  float: left;
+  width: 50%;
+}
+.right {
+  float: right;
+  width: 50%;
+}
+.tickets {
+  margin: 12px auto;
+}
+.select {
+  margin: 12px auto;
+
+}
+.total {
+  margin: 12px auto;
+}
+
+/* parking ticket selection */
+
+.select:after {
+  font: 17px "Consolas", monospace;
+  right: 11px;
+  top: 18px;
+  position: absolute;
+}
+
+.select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  display: block;
+  max-width: 400px;
+  height: 50px;
+  margin: 5px 0px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* cc validator */
+input, .cc{
+  display: inline-block;
+}
+label .cc{
+  display: block;
+}
+label .ccT {
+  display: inline-block;
+  vertical-align: bottom; 
 }
