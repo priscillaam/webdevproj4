@@ -5,6 +5,8 @@ $user = "root";
 $password = "";
 $db = "e-commercedb";
 
+getAvailParking();
+
 function getProducts() {
     global $host;
     global $user;
@@ -28,31 +30,30 @@ function getProducts() {
     return $ret;
 }
 
-function getQtySold($city, $prodType) {
+function getAvailParking() {
     global $host;
     global $user;
     global $password;
     global $db;
-    $parkingFlags = ['VP', 'SP'];
     $link = mysqli_connect($host, $user, $password, $db);
-
-    if(in_array($prodType, $parkingFlags)) {
-        $qtySldQuery = mysqli_query($link, "SELECT SUM(quantity) AS qty_sold " .
-                                           "FROM order_details " .
-                                           "JOIN product ON order_details.product_id = product.id " .
-                                           "WHERE product_type = \"" . $prodType . "\" " .
-                                           "GROUP BY product_id");
-    } else {
-        $qtySldQuery = mysqli_query($link, "SELECT Count(boarding_pass_info.id) AS qty_sold " .
-                                           "FROM order_details " .
-                                           "JOIN product ON order_details.product_id = product.id " .
-                                           "JOIN boarding_pass_info ON boarding_pass_info.order_details_id = order_details.id " .
-                                           "WHERE product_type = \"" . $prodType . "\" AND arrival_city_id = " . $city . " " .
-                                           "GROUP BY product_id");
+    $qtySold = "SELECT product_id, SUM(quantity) as sold FROM order_details where product_id in (4, 5) GROUP BY product_id";
+    $query = mysqli_query($link, $qtySold);
+    $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+    $sold = array();
+    foreach($result as $r) {
+        $sold[$r['product_id']] = $r['sold'];
     }
-    $result = mysqli_fetch_array($qtySldQuery, MYSQLI_ASSOC);
+    
+    $totalQty = "SELECT id, product_type, total_qty FROM product WHERE id IN (4, 5)";
+    $query = mysqli_query($link, $totalQty);
+    $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+    $avail = array();
+    foreach($result as $r) {
+        $avail[$r['id']] = $r['total_qty'] - $sold[$r['id']];
+    }
+    
     if($result) {
-        return $result['qty_sold'];
+        return $avail;
     } else {
         return 0;
     }
