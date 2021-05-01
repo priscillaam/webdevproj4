@@ -5,8 +5,6 @@ $user = "root";
 $password = "";
 $db = "e-commercedb";
 
-getCities();
-
 function getProducts() {
     global $host;
     global $user;
@@ -54,10 +52,8 @@ function getQtySold($city, $prodType) {
     }
     $result = mysqli_fetch_array($qtySldQuery, MYSQLI_ASSOC);
     if($result) {
-        var_dump($result['qty_sold']);
         return $result['qty_sold'];
     } else {
-        var_dump(0);
         return 0;
     }
 }
@@ -81,4 +77,54 @@ function getCities() {
     }
     
     return $ret;
+}
+
+function getAvailableSeats($city_id) {
+    global $host;
+    global $user;
+    global $password;
+    global $db;
+    $link = mysqli_connect($host, $user, $password, $db);
+    
+    $sqlQuery = "SELECT seat FROM boarding_pass_info where arrival_city_id = " . $city_id;
+    $query = mysqli_query($link, $sqlQuery);
+    
+    $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+    $seats = array();
+    foreach($result as $seat) {
+        $seats[] = $seat['seat'];
+    }
+    $sqlQuery = "SELECT seat, seat_type FROM seats where seat NOT IN ('" . implode("', '", $seats) . "')";
+    $availSeats = mysqli_query($link, $sqlQuery);
+    $result = mysqli_fetch_all($availSeats, MYSQLI_ASSOC);
+    $availSeats = array();
+    foreach($result as $seat) {
+        $newSeat['seat'] = $seat['seat'];
+        $newSeat['seat_type'] = $seat['seat_type'];
+        $availSeats[] = $newSeat;
+    }
+    
+    return $availSeats;
+}
+
+function getNumSeatsAvail($city_id) {
+    global $host;
+    global $user;
+    global $password;
+    global $db;
+    $link = mysqli_connect($host, $user, $password, $db);
+    
+    $sqlQuery = "SELECT seat FROM boarding_pass_info where arrival_city_id = " . $city_id;
+    $query = mysqli_query($link, $sqlQuery);
+    
+    $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+    $seats = array();
+    foreach($result as $seat) {
+        $seats[] = $seat['seat'];
+    }
+    $sqlQuery = "SELECT seat_type, COUNT(seat_type) FROM seats where seat NOT IN ('" . implode("', '", $seats) . "') GROUP BY seat_type";
+    $availSeats = mysqli_query($link, $sqlQuery);
+    $result = mysqli_fetch_all($availSeats, MYSQLI_ASSOC);
+    
+    return $result;
 }

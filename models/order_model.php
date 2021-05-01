@@ -5,8 +5,6 @@ $user = "root";
 $password = "";
 $db = "e-commercedb";
 
-convertToOrder(3, 4);
-
 function getOrders($login_id)
 {
     global $host;
@@ -199,5 +197,24 @@ function convertToOrder($login_id, $payment_method_id) {
         return -1;
     } else {
         return 0;
+    }
+}
+
+function addBoardingPass($order_detail_id, $passenger_name, $seat, $arrival_city_id) {
+    global $host;
+    global $user;
+    global $password;
+    global $db;
+    $link = mysqli_connect($host, $user, $password, $db);
+    
+    $query = "INSERT INTO boarding_pass_info (order_details_id, passenger_name, seat, arrival_city_id) VALUES ("
+    . $order_detail_id . ", '" . $passenger_name . "', '" . $seat . "', " . $arrival_city_id . ")";
+    $sqlQuery = mysqli_query($link, $query);
+        
+    if( $sqlQuery == false){
+        return -1;
+    }else{
+       $boarding_pass_id =  $link->insert_id;
+        return $boarding_pass_id;
     }
 }

@@ -29,7 +29,7 @@ CREATE TABLE `boarding_pass_info` (
   `seat` varchar(3) NOT NULL,
   `arrival_city_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `boarding_pass_info` (
 
 LOCK TABLES `boarding_pass_info` WRITE;
 /*!40000 ALTER TABLE `boarding_pass_info` DISABLE KEYS */;
-INSERT INTO `boarding_pass_info` VALUES (1,1,'Jason Matthew Davis','1A',1),(2,1,'Lornah Ludia Okoth','1B',1),(3,3,'A B C','20A',1),(4,7,'B C D','20B',1),(5,7,'C D E','20C',1),(6,7,'D E F','20D',1),(7,7,'E F G','20E',1),(8,7,'F G H','20F',1);
+INSERT INTO `boarding_pass_info` VALUES (1,1,'Jason Matthew Davis','1A',1),(2,1,'Lornah Ludia Okoth','1B',1),(3,3,'A B C','20A',1),(4,7,'B C D','20B',1),(5,7,'C D E','20C',1),(6,7,'D E F','20D',1),(7,7,'E F G','20E',1),(8,7,'F G H','20F',1),(9,1,'Bob Jones','2B',1);
 /*!40000 ALTER TABLE `boarding_pass_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -55,7 +55,7 @@ CREATE TABLE `cities` (
   `state` text NOT NULL,
   `airport_code` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `cities` (
 
 LOCK TABLES `cities` WRITE;
 /*!40000 ALTER TABLE `cities` DISABLE KEYS */;
-INSERT INTO `cities` VALUES (1,'Pittsburgh','PA','PIT'),(2,'Baltimore','MD','BWI');
+INSERT INTO `cities` VALUES (1,'Pittsburgh','PA','PIT'),(2,'Baltimore','MD','BWI'),(3,'New York City','NY','JFK'),(4,'Abu Dhabi','UAE','AUH'),(5,'Adelaide','AUS','ADL'),(6,'Heathrow','UK','BTR'),(7,'Los Angeles','CA','LAX'),(8,'Tokyo','JP','TYO');
 /*!40000 ALTER TABLE `cities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -209,6 +209,31 @@ INSERT INTO `product` VALUES (1,'FC','First Class Seats',20,500.00),(2,'BC','Bus
 UNLOCK TABLES;
 
 --
+-- Table structure for table `seats`
+--
+
+DROP TABLE IF EXISTS `seats`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `seats` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `seat` varchar(3) NOT NULL,
+  `seat_type` varchar(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `seats`
+--
+
+LOCK TABLES `seats` WRITE;
+/*!40000 ALTER TABLE `seats` DISABLE KEYS */;
+INSERT INTO `seats` VALUES (1,'1A','FC'),(2,'1B','FC'),(3,'1C','FC'),(4,'1D','FC'),(5,'2A','FC'),(6,'2B','FC'),(7,'2C','FC'),(8,'2D','FC'),(9,'19A','EC'),(10,'19B','EC'),(11,'19C','EC'),(12,'19D','EC'),(13,'19E','EC'),(14,'19F','EC'),(15,'20A','EC'),(16,'20B','EC'),(17,'20C','EC'),(18,'20D','EC'),(19,'20E','EC'),(20,'20F','EC'),(21,'8A','BC'),(22,'8B','BC'),(23,'8C','BC'),(24,'8D','BC'),(25,'8E','BC'),(26,'8F','BC');
+/*!40000 ALTER TABLE `seats` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user_profile`
 --
 
@@ -245,4 +270,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-29 21:16:02
+-- Dump completed on 2021-05-01 14:15:02
