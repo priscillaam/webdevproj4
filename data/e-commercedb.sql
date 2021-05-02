@@ -38,7 +38,7 @@ CREATE TABLE `boarding_pass_info` (
 
 LOCK TABLES `boarding_pass_info` WRITE;
 /*!40000 ALTER TABLE `boarding_pass_info` DISABLE KEYS */;
-INSERT INTO `boarding_pass_info` VALUES (1,1,'Jason Matthew Davis','1A',3),(2,1,'Lornah Ludia Okoth','1B',3),(3,3,'A B C','20A',4),(4,7,'B C D','20B',5),(5,7,'C D E','20C',5),(6,7,'D E F','20D',15),(7,7,'E F G','20E',5),(8,7,'F G H','20F',1),(9,1,'Bob Jones','2B',3);
+INSERT INTO `boarding_pass_info` VALUES (3,3,'A B C','20A',4),(4,7,'B C D','20B',5),(5,7,'C D E','20C',5),(6,7,'D E F','20D',15),(7,7,'E F G','20E',5),(8,7,'F G H','20F',1),(9,1,'Bob Jones','2B',3);
 /*!40000 ALTER TABLE `boarding_pass_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `login` (
 
 LOCK TABLES `login` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
-INSERT INTO `login` VALUES (1,'testuser1','4d2f7537251270fc3574dcb3e8c9e031'),(2,'testuser2','e2409b83e61f93f62af884945c6ecd5b'),(5,'jadavis','6f951c5d02156c20dd1d6ac601a9c2c5'),(6,'jadavis','6f951c5d02156c20dd1d6ac601a9c2c5'),(7,'jadavis','6f951c5d02156c20dd1d6ac601a9c2c5');
+INSERT INTO `login` VALUES (1,'testuser1','4d2f7537251270fc3574dcb3e8c9e031'),(2,'testuser2','e2409b83e61f93f62af884945c6ecd5b');
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,8 +242,6 @@ DROP TABLE IF EXISTS `user_profile`;
 CREATE TABLE `user_profile` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login_id` int(11) NOT NULL,
-  `first_name` text NOT NULL,
-  `last_name` text NOT NULL,
   `phone_num` text NOT NULL,
   `email` text NOT NULL,
   PRIMARY KEY (`id`)
@@ -256,7 +254,7 @@ CREATE TABLE `user_profile` (
 
 LOCK TABLES `user_profile` WRITE;
 /*!40000 ALTER TABLE `user_profile` DISABLE KEYS */;
-INSERT INTO `user_profile` VALUES (1,1,'Test','User1','(123)456-7890','testuser1@gmail.com'),(2,2,'Test','User2','9876543210','testuser2@gmail.com'),(3,7,'Jason','Davis','123-456-0987','a@b.com');
+INSERT INTO `user_profile` VALUES (1,1,'(123)456-7890','testuser1@gmail.com'),(2,2,'9876543210','testuser2@gmail.com'),(3,7,'123-456-0987','a@b.com');
 /*!40000 ALTER TABLE `user_profile` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -269,4 +267,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-01 21:31:54
+-- Dump completed on 2021-05-02 18:30:43

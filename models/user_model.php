@@ -43,8 +43,25 @@ function updateUserPassword($login_id, $user_pass) {
     }
 }
 
+//checkUsername function checks to see if the username already exists
+function checkUsername($username) {
+    global $host;
+    global $user;
+    global $password;
+    global $db;
+    $link = mysqli_connect($host, $user, $password, $db);
+    
+    $query = mysqli_query($link, "SELECT * FROM login WHERE login.username = " . $username);
+    
+    if(mysqli_num_rows($query) == 0) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
 //registerUser functions connects to DB to insert User's data into login table 
-function registerUser($username, $user_pass, $first_name, $last_name, $email, $phone) {
+function registerUser($username, $user_pass, $email, $phone) {
     global $salt;
     global $host;
     global $user;
@@ -57,8 +74,8 @@ function registerUser($username, $user_pass, $first_name, $last_name, $email, $p
     $query = mysqli_query($link, $sqlQuery);
     if($query != false) {
         $login_id = $link->insert_id;
-        $sqlQuery = "INSERT INTO user_profile (login_id, first_name, last_name, email, phone_num) VALUES " .
-                    "('" . $login_id . "', '" . $first_name . "', '" . $last_name . "', '" . $email . "', '" . $phone . "')";
+        $sqlQuery = "INSERT INTO user_profile (login_id, email, phone_num) VALUES " .
+                    "('" . $login_id . "', '" . $email . "', '" . $phone . "')";
         $query = mysqli_query($link, $sqlQuery);
         return $login_id;
     } else {
@@ -68,15 +85,14 @@ function registerUser($username, $user_pass, $first_name, $last_name, $email, $p
 
 //updateUserInfo functions updates DB with users new info
 //did not use
-function updateUserInfo($login_id, $first_name, $last_name, $email, $phone) {
+function updateUserInfo($login_id, $email, $phone) {
     global $host;
     global $user;
     global $password;
     global $db;
     
     $link = mysqli_connect($host, $user, $password, $db);
-    $sqlQuery = "UPDATE user_profile SET first_name = '" . $first_name . "', last_name = '" . $last_name . "', " . 
-                "email = '" . $email . "', phone_num = '" . $phone . "' WHERE login_id = " . $login_id;
+    $sqlQuery = "UPDATE user_profile SET email = '" . $email . "', phone_num = '" . $phone . "' WHERE login_id = " . $login_id;
     $query = mysqli_query($link, $sqlQuery);
     if($query != false) {
         return $login_id;
