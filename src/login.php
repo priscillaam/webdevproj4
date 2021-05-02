@@ -28,10 +28,15 @@ $email = $password = $err = "";
     if(str_contains($users,$user)){ 
       header("Location:index.html");
 		}else
+	{
+		include 'both.php';
+		$cookie = $_COOKIE[$counter]+1;
+        setcookie($counter, $cookie);
 		echo '<script>
 			 window.location.href = "both.php";
-			 alert("Invalid Login")</script>';
-	
+			 alert("Invalid Login. Attempts: '.($_COOKIE[$counter]+1).'")</script>';
+	}
+
          function test_input($data) {
             $data = trim($data);
             $data = stripslashes($data);
