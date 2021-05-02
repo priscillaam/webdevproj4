@@ -8,13 +8,6 @@
 	 margin: 20px auto;
 	 max-width: 400px;
 }
- .cockpit {
-	 height: 250px;
-	 position: relative;
-	 overflow: hidden;
-	 text-align: center;
-	 border-bottom: 5px solid #d8d8d8;
-}
 
 .eexit {
   border-style: solid;
@@ -23,52 +16,11 @@
   color: black;
   border-color: black;
 }
- .cockpit h1 {
-	 margin: 115px;
-}
  .exit {
 	 position: relative;
 	 height: 50px;
 }
 
-.exit:before, .exit:after {
-	 content: "<− EXIT / ENTER";
-   border-style: solid;
-   border-color: black;
-	 font-size: 14px;
-	 line-height: 18px;
-	 padding: 5px 5px;
-	 font-family: "Arial Narrow", Arial, sans-serif;
-	 display: block;
-	 position: absolute;
-	 background: green;
-	 color: white;
-	 top: 50%;
-	 transform: translate(0, -50%);
-}
-
-.exit:after {
-	 content: "EXIT / ENTER −>";
-   border-style: solid;
-   border-color: black;
-	 font-size: 14px;
-	 line-height: 18px;
-	 padding: 5px 5px;
-	 font-family: "Arial Narrow", Arial, sans-serif;
-	 display: block;
-	 position: absolute;
-	 background: green;
-	 color: white;
-	 top: 50%;
-	 transform: translate(0, -50%);
-}
-
-.exit:before {
-	 left: 0;
-}
- .exit:after {
-	 right: 0;
-}
  .fuselage {
 	 border-right: 5px solid #d8d8d8;
 	 border-left: 5px solid #d8d8d8;
