@@ -9,12 +9,12 @@
     <body class="parkB">
         <header>
             <h1 class="logo"><a href="">Ecommerce Site Name</a></h1>
-            <h1 class="cart"><a href="">Cart</a></h1>
+            <h1 class="cart"><a href="./cart.php">Cart</a></h1>
             <nav>
                 <ul>
                     <li class=""><a href="./index.html">Home</a></li>
                     <li><a href="./flights.html">Flights</a></li>
-                    <li class="active"><a href="./parking.html">Parking</a></li>
+                    <li class="active"><a href="./parking.php">Parking</a></li>
 
                     
                   </ul>
