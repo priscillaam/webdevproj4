@@ -15,6 +15,7 @@
                     <li class=""><a href="./index.html">Home</a></li>
                     <li><a href="./flights.html">Flights</a></li>
                     <li class=""><a href="./parking.php">Parking</a></li>
+                    <li><a href="./both.php">Logout</a></li>
 
                     
                   </ul>
