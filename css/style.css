@@ -278,6 +278,45 @@ h1, a, h2{
   background-color: #37474f;
   
 }
+.parkP {
+  font-family: sans-serif;
+  font-size: 1em;
+  font-weight: 100;
+  color: #2b4251;
+
+}
+
+/* styling for profile */
+.wrapper {
+  display: table-cell;
+  vertical-align: top;
+}
+.constructor {
+  position: relative;
+  margin: 0;
+  padding: 0 50px;
+}
+.headline {
+  font-size: 1.5em;
+  font-weight: 1em;
+  color: #00008b;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+.subhead {
+  font-size: 1em;
+  font-weight: 1em;
+  color: #00008b;
+  font-family: sans-serif;
+}
+.orderH {
+  width: 75%;
+  height: 60%;
+  background-color: white;
+  margin: 0 auto;
+  align-content: center;
+  text-align: center;
+}
 
 /* cc validator */
 input, .cc{
@@ -290,10 +329,4 @@ label .ccT {
   display: inline-block;
   vertical-align: bottom; 
 }
-.parkP {
-  font-family: sans-serif;
-  font-size: 1em;
-  font-weight: 100;
-  color: #2b4251;
 
-}
