@@ -46,7 +46,10 @@
     <label> City</label>
     <input type="text" name="city">
     <label>Zipcode </label>
-      <input type="text" name="zipcode">
+     <input type="text" name="zipcode">
+    <label>Country</label>
+    <input type="text" name="country">
+     
     <label>Phone Number</label>
     <input type="text" name="pnumber">
 <div id="subbutton">
