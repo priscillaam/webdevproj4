@@ -5,6 +5,8 @@ $user = "root";
 $password = "";
 $db = "e-commercedb";
 
+//returns the list of all products offered. the inventory
+//did not use
 function getProducts() {
     global $host;
     global $user;
@@ -26,6 +28,8 @@ function getProducts() {
     return $ret;
 }
 
+//returns the number of parking spots available for VIP and Standard
+//did not use
 function getAvailParking() {
     global $host;
     global $user;
@@ -55,6 +59,7 @@ function getAvailParking() {
     }
 }
 
+//returns the list of cities
 function getCities() {
     global $host;
     global $user;
@@ -77,6 +82,7 @@ function getCities() {
     return $ret;
 }
 
+//retuns the list of available seats on a choosen destination
 function getAvailableSeats($city_id) {
     global $host;
     global $user;
@@ -104,6 +110,8 @@ function getAvailableSeats($city_id) {
     return $availSeats;
 }
 
+//returns the qty of seats available 
+//did not use
 function getNumSeatsAvail($city_id) {
     global $host;
     global $user;

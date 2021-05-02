@@ -5,6 +5,7 @@ $password = "";
 $db = "e-commercedb";
 $salt = "Cl0uDy\$ky";
 
+//getUserInfo function connects to the DB to run a query on all Columns in the login table to get all of User's data.
 function getUserInfo($login_id) {
     global $host;
     global $user;
@@ -22,6 +23,8 @@ function getUserInfo($login_id) {
     }
 }
 
+// updateUserPassword function connects to the DB to update the password data in the DB
+//did not use
 function updateUserPassword($login_id, $user_pass) {
     global $host;
     global $user;
@@ -40,6 +43,7 @@ function updateUserPassword($login_id, $user_pass) {
     }
 }
 
+//registerUser functions connects to DB to insert User's data into login table 
 function registerUser($username, $user_pass, $first_name, $last_name, $email, $phone) {
     global $salt;
     global $host;
@@ -62,6 +66,8 @@ function registerUser($username, $user_pass, $first_name, $last_name, $email, $p
     }
 }
 
+//updateUserInfo functions updates DB with users new info
+//did not use
 function updateUserInfo($login_id, $first_name, $last_name, $email, $phone) {
     global $host;
     global $user;
@@ -79,6 +85,7 @@ function updateUserInfo($login_id, $first_name, $last_name, $email, $phone) {
     }
 }
 
+//login function checks if username and password matches to DB 
 function login($login, $pass) {
     global $salt;
     global $host;
@@ -99,6 +106,9 @@ function login($login, $pass) {
     }
 }
 
+// getPaymentAccounts function gets data from all columns in payment_methods table. 
+// This would get all of the payment methods for the user.
+//did not use
 function getPaymentAccounts($login_id){
     global $host;
     global $user;
@@ -118,6 +128,9 @@ function getPaymentAccounts($login_id){
     return $arr;
 }
 
+//getPaymentsAccount function gets all the columns from payment methods table for 
+//one payment method that was selected by the user.
+//did not use
 function getPaymentAccount($payment_id){
     global $host;
     global $user;
@@ -137,6 +150,8 @@ function getPaymentAccount($payment_id){
     return $arr;
 }
 
+//addPaymentAccount function inserts payment method info into payment method table
+//did not use
 function addPaymentAccount($login_id, $cred_num, $card_holder_name, $exp_date, $bill_addr1, 
                            $bill_addr2, $bill_city, $bill_state, $bill_zip, $bill_country, $bill_phone) {
     global $host;
@@ -159,6 +174,8 @@ function addPaymentAccount($login_id, $cred_num, $card_holder_name, $exp_date, $
     }
 }
 
+//updatePaymentAccount function is to update the User's payment method info in payment_method table.
+//did not use
 function updatePaymentAccount($payment_id, $card_holder_name, $exp_date, $bill_addr1, $bill_addr2, 
                               $bill_city, $bill_state, $bill_zip, $bill_country, $bill_phone) {
     global $host;
@@ -179,6 +196,9 @@ function updatePaymentAccount($payment_id, $card_holder_name, $exp_date, $bill_a
     }
 }
 
+//deletePaymentAccount function deletes a row in payment_methods table based on ID.
+//This function runs when user deletes one of their payment methods.
+//did not use
 function deletePaymentAccount($payment_id) {
     global $host;
     global $user;

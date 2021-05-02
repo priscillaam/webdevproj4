@@ -7,6 +7,7 @@ $db = "e-commercedb";
 
 updateQty(1, 15, 2);
 
+//this function gets all the orders the user has placed
 function getOrders($login_id)
 {
     global $host;
@@ -44,7 +45,8 @@ function getOrders($login_id)
     
     return $ret;
 }
-
+//This functions is used to view a boarding pass of an order.
+//did not use
 function getBoardingPasses($order_detail_id) {
     global $host;
     global $user;
@@ -69,6 +71,7 @@ function getBoardingPasses($order_detail_id) {
     return $ret;
 }
 
+//this function returns the users current shopping cart
 function getShoppingCart($login_id) {
     global $host;
     global $user;
@@ -102,6 +105,7 @@ function getShoppingCart($login_id) {
     return $head;
 }
 
+// adds items to the shopping cart
 function addToCart($login_id, $product_id, $quantity, $price) {
     global $host;
     global $user;
@@ -142,6 +146,7 @@ function addToCart($login_id, $product_id, $quantity, $price) {
     }
 }
 
+//updates the qty while in the shopping cart. can also be used to delete the qty in the cart by setting it to zero.
 function updateQty($login_id, $detail_id, $new_quantity) {
     global $host;
     global $user;
@@ -174,6 +179,7 @@ function updateQty($login_id, $detail_id, $new_quantity) {
     }
 }
 
+//converts shopping cart to and order after checkout
 function convertToOrder($login_id, $payment_method_id) {
     global $host;
     global $user;
@@ -193,6 +199,7 @@ function convertToOrder($login_id, $payment_method_id) {
     }
 }
 
+//Adds boarding pass information
 function addBoardingPass($order_detail_id, $passenger_name, $seat, $arrival_city_id) {
     global $host;
     global $user;
