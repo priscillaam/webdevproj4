@@ -5,6 +5,8 @@ $user = "root";
 $password = "";
 $db = "e-commercedb";
 
+updateQty(1, 15, 2);
+
 function getOrders($login_id)
 {
     global $host;
@@ -100,7 +102,7 @@ function getShoppingCart($login_id) {
     return $head;
 }
 
-function addToCart($login_id, $product_id, $quantity) {
+function addToCart($login_id, $product_id, $quantity, $price) {
     global $host;
     global $user;
     global $password;
@@ -111,19 +113,10 @@ function addToCart($login_id, $product_id, $quantity) {
     
     if(mysqli_num_rows($orderQuery) == 1) {
         $result = mysqli_fetch_array($orderQuery, MYSQLI_ASSOC);
-        $detailQuery = "SELECT * FROM order_details WHERE product_id = " . $product_id . " AND order_header_id =" . $result['id'];
-        $detailResult = mysqli_query($link, $detailQuery);
-        if(mysqli_num_rows($detailResult) == 1){
-            $checkDetail = mysqli_fetch_array($detailResult);
-            $newQty = $checkDetail['quantity'] + $quantity;
-            $sqlQuery = "UPDATE order_details SET quantity = " . $newQty . " WHERE id = " . $checkDetail['id'];
-        }else {
-            $sqlQuery = "INSERT INTO order_details(order_header_id, product_id, quantity) VALUES (" .
-            $result['id'] . ", " . $product_id . ", " . $quantity . ")";
-        }
+        $sqlQuery = "INSERT INTO order_details(order_header_id, product_id, quantity, price) VALUES (" .
+        $result['id'] . ", " . $product_id . ", " . $quantity . ", " . $price . ")";
         $header_id = $result['id'];
         $currentAmount = $result['total_amount'];
-        mysqli_query($link, $sqlQuery);
     } else {
         $sqlQuery = "INSERT INTO order_header(order_type, login_id) VALUE ('S', " . $login_id . ")";
         $result = mysqli_query($link, $sqlQuery);
@@ -131,21 +124,21 @@ function addToCart($login_id, $product_id, $quantity) {
             return -1;
         } else {
             $header_id = $link->insert_id; 
-            $sqlQuery = "INSERT INTO order_details(order_header_id, product_id, quantity) VALUES (" .
-            $header_id . ", " . $product_id . ", " . $quantity . ")";
+            $sqlQuery = "INSERT INTO order_details(order_header_id, product_id, quantity, price) VALUES (" .
+            $header_id . ", " . $product_id . ", " . $quantity . ", " . $price . ")";
             mysqli_query($link, $sqlQuery);
         }
         $currentAmount = 0;
     }
     
-    $costQuery = mysqli_query($link, "SELECT price FROM product WHERE id = " . $product_id);
-    $costArr = mysqli_fetch_array($costQuery, MYSQLI_ASSOC);
-    $newTotal = $costArr['price'] * $quantity + $currentAmount;
+    $detail_id = $link->insert_id;
+    
+    $newTotal = $price * $quantity + $currentAmount;
     $update = mysqli_query($link, "UPDATE order_header SET total_amount = " . $newTotal . " WHERE id = " . $header_id);
     if($update == false) {
         return -2;
     } else {
-        return 0;
+        return $detail_id;
     }
 }
 

@@ -38,7 +38,7 @@ CREATE TABLE `boarding_pass_info` (
 
 LOCK TABLES `boarding_pass_info` WRITE;
 /*!40000 ALTER TABLE `boarding_pass_info` DISABLE KEYS */;
-INSERT INTO `boarding_pass_info` VALUES (1,1,'Jason Matthew Davis','1A',1),(2,1,'Lornah Ludia Okoth','1B',1),(3,3,'A B C','20A',1),(4,7,'B C D','20B',1),(5,7,'C D E','20C',1),(6,7,'D E F','20D',1),(7,7,'E F G','20E',1),(8,7,'F G H','20F',1),(9,1,'Bob Jones','2B',1);
+INSERT INTO `boarding_pass_info` VALUES (1,1,'Jason Matthew Davis','1A',3),(2,1,'Lornah Ludia Okoth','1B',3),(3,3,'A B C','20A',4),(4,7,'B C D','20B',5),(5,7,'C D E','20C',5),(6,7,'D E F','20D',15),(7,7,'E F G','20E',5),(8,7,'F G H','20F',1),(9,1,'Bob Jones','2B',3);
 /*!40000 ALTER TABLE `boarding_pass_info` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `cities` (
 
 LOCK TABLES `cities` WRITE;
 /*!40000 ALTER TABLE `cities` DISABLE KEYS */;
-INSERT INTO `cities` VALUES (1,'Pittsburgh','PA','PIT'),(2,'Baltimore','MD','BWI'),(3,'New York City','NY','JFK'),(4,'Abu Dhabi','UAE','AUH'),(5,'Adelaide','AUS','ADL'),(6,'Heathrow','UK','BTR'),(7,'Los Angeles','CA','LAX'),(8,'Tokyo','JP','TYO');
+INSERT INTO `cities` VALUES (3,'New York City','NY','JFK'),(4,'Abu Dhabi','UAE','AUH'),(5,'Adelaide','AUS','ADL'),(6,'Heathrow','UK','BTR'),(7,'Los Angeles','CA','LAX'),(8,'Tokyo','JP','TYO');
 /*!40000 ALTER TABLE `cities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,9 +104,10 @@ CREATE TABLE `order_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `order_header_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   `quantity` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,7 +116,7 @@ CREATE TABLE `order_details` (
 
 LOCK TABLES `order_details` WRITE;
 /*!40000 ALTER TABLE `order_details` DISABLE KEYS */;
-INSERT INTO `order_details` VALUES (1,1,1,2),(2,1,4,1),(3,2,3,1),(4,2,5,1),(5,3,2,3),(6,3,4,1),(7,3,3,5),(8,3,5,2),(10,5,2,1),(11,7,2,3),(14,8,4,3);
+INSERT INTO `order_details` VALUES (1,1,3,100.00,2),(2,1,4,15.00,1),(3,2,3,150.00,1),(4,2,5,7.00,1),(5,3,3,150.00,3),(6,3,4,15.00,1),(7,3,3,100.00,5),(8,3,5,7.00,2),(10,5,3,125.00,1),(11,7,3,125.00,3),(14,8,4,15.00,3),(15,1,3,150.00,2);
 /*!40000 ALTER TABLE `order_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +144,7 @@ CREATE TABLE `order_header` (
 
 LOCK TABLES `order_header` WRITE;
 /*!40000 ALTER TABLE `order_header` DISABLE KEYS */;
-INSERT INTO `order_header` VALUES (1,'O',1,4,'2021-04-21',251.97),(2,'O',1,3,'2021-04-29',125.23),(3,'O',2,2,'2021-04-07',1000.75),(5,'S',2,0,'0000-00-00',0.00),(7,'O',3,4,'2021-04-30',450.00),(8,'S',1,0,'0000-00-00',60.00);
+INSERT INTO `order_header` VALUES (1,'S',1,4,'2021-04-21',551.97),(2,'O',1,3,'2021-04-29',125.23),(3,'O',2,2,'2021-04-07',1000.75),(5,'S',2,0,'0000-00-00',0.00),(7,'O',3,4,'2021-04-30',450.00),(8,'O',1,0,'0000-00-00',60.00);
 /*!40000 ALTER TABLE `order_header` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -193,7 +194,6 @@ CREATE TABLE `product` (
   `product_type` varchar(2) NOT NULL,
   `description` text NOT NULL,
   `total_qty` int(11) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -204,7 +204,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'FC','First Class Seats',20,500.00),(2,'BC','Business Class Seats',45,150.00),(3,'EC','Economy Class Seats',87,50.00),(4,'VP','VIP Parking Spot',100,20.00),(5,'SP','Standard Parking Spot',300,10.00);
+INSERT INTO `product` VALUES (3,'EC','Economy Class Seats',87),(4,'VP','VIP Parking Spot',100),(5,'SP','Standard Parking Spot',300);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,9 +218,8 @@ DROP TABLE IF EXISTS `seats`;
 CREATE TABLE `seats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `seat` varchar(3) NOT NULL,
-  `seat_type` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -229,7 +228,7 @@ CREATE TABLE `seats` (
 
 LOCK TABLES `seats` WRITE;
 /*!40000 ALTER TABLE `seats` DISABLE KEYS */;
-INSERT INTO `seats` VALUES (1,'1A','FC'),(2,'1B','FC'),(3,'1C','FC'),(4,'1D','FC'),(5,'2A','FC'),(6,'2B','FC'),(7,'2C','FC'),(8,'2D','FC'),(9,'19A','EC'),(10,'19B','EC'),(11,'19C','EC'),(12,'19D','EC'),(13,'19E','EC'),(14,'19F','EC'),(15,'20A','EC'),(16,'20B','EC'),(17,'20C','EC'),(18,'20D','EC'),(19,'20E','EC'),(20,'20F','EC'),(21,'8A','BC'),(22,'8B','BC'),(23,'8C','BC'),(24,'8D','BC'),(25,'8E','BC'),(26,'8F','BC');
+INSERT INTO `seats` VALUES (1,'1A'),(2,'1B'),(3,'1C'),(4,'1D'),(5,'1E'),(6,'1F'),(7,'2A'),(8,'2B'),(9,'2C'),(10,'2D'),(11,'2E'),(12,'2F'),(13,'3A'),(14,'3B'),(15,'3C'),(16,'3D'),(17,'3E'),(18,'3F'),(19,'4A'),(20,'4B'),(21,'4C'),(22,'4D'),(23,'4E'),(24,'4F'),(25,'5A'),(26,'5B'),(27,'5C'),(28,'5D'),(29,'5E'),(30,'5F'),(31,'6A'),(32,'6B'),(33,'6C'),(34,'6D'),(35,'6E'),(36,'6F'),(37,'7A'),(38,'7B'),(39,'7C'),(40,'7D'),(41,'7E'),(42,'7F'),(43,'8A'),(44,'8B'),(45,'8C'),(46,'8D'),(47,'8E'),(48,'8F'),(49,'9A'),(50,'9B'),(51,'9C'),(52,'9D'),(53,'9E'),(54,'9F'),(55,'10A'),(56,'10B'),(57,'10C'),(58,'10D'),(59,'10E'),(60,'10F');
 /*!40000 ALTER TABLE `seats` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -270,4 +269,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-01 14:15:02
+-- Dump completed on 2021-05-01 21:31:54

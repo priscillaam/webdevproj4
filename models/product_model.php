@@ -5,14 +5,11 @@ $user = "root";
 $password = "";
 $db = "e-commercedb";
 
-getAvailParking();
-
 function getProducts() {
     global $host;
     global $user;
     global $password;
     global $db;
-    $parkingFlags = ['VP', 'SP'];
     $link = mysqli_connect($host, $user, $password, $db);
 
     $prodListQuery = mysqli_query($link, "SELECT * FROM product");
@@ -23,7 +20,6 @@ function getProducts() {
         $prod['prodType'] = $result['product_type'];
         $prod['desc'] = $result['description'];
         $prod['totalQty'] = $result['total_qty'];
-        $prod['price'] = $result['price'];
         $ret[] = $prod;
     }
     
@@ -96,13 +92,12 @@ function getAvailableSeats($city_id) {
     foreach($result as $seat) {
         $seats[] = $seat['seat'];
     }
-    $sqlQuery = "SELECT seat, seat_type FROM seats where seat NOT IN ('" . implode("', '", $seats) . "')";
+    $sqlQuery = "SELECT seat FROM seats where seat NOT IN ('" . implode("', '", $seats) . "')";
     $availSeats = mysqli_query($link, $sqlQuery);
     $result = mysqli_fetch_all($availSeats, MYSQLI_ASSOC);
     $availSeats = array();
     foreach($result as $seat) {
         $newSeat['seat'] = $seat['seat'];
-        $newSeat['seat_type'] = $seat['seat_type'];
         $availSeats[] = $newSeat;
     }
     
@@ -124,7 +119,7 @@ function getNumSeatsAvail($city_id) {
     foreach($result as $seat) {
         $seats[] = $seat['seat'];
     }
-    $sqlQuery = "SELECT seat_type, COUNT(seat_type) FROM seats where seat NOT IN ('" . implode("', '", $seats) . "') GROUP BY seat_type";
+    $sqlQuery = "SELECT COUNT(seat_type) FROM seats where seat NOT IN ('" . implode("', '", $seats) . "')";
     $availSeats = mysqli_query($link, $sqlQuery);
     $result = mysqli_fetch_all($availSeats, MYSQLI_ASSOC);
     
