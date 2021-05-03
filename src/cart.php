@@ -12,14 +12,14 @@
             <h1 class="logo"><a href="">Ecommerce Site Name</a></h1>
             <h1 class="cart">
                 <a href="./cart.html">
-                    <ion-icon name="basket"></ion-icon><span></span>
+                    <ion-icon name="basket"></ion-icon>
                 </a>
             </h1>
             <nav>
                 <ul>
                     <li class=""><a href="index.html">Home</a></li>
                     <li class=""><a href="flights.html">Flights</a></li>
-                    <li class=""><a href="parking.html"> Parking</a></li>
+                    <li class=""><a href="parking.php"> Parking</a></li>
                   </ul>
             </nav>
         </header>
