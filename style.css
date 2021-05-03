@@ -333,12 +333,14 @@ label .ccT {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+
 }
 .flex-container > .box {
     background-color: #C5D7BD;
     width: 300px;
     margin: 20px;
     text-align: center;
+      height:inherit;
     /* line-height: 75px; */
     font-size: 20px;
 }
