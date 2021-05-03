@@ -86,7 +86,7 @@ nav ul li a {
   padding-bottom: 12px;
   color: #37474f;
   font-size: 12px;
-  font-family: Roboto;
+  font-family: sans-serif;
 }
 
 nav ul li a:hover {border-bottom: 3px solid black;}
