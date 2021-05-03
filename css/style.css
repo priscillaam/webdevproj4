@@ -132,9 +132,9 @@ h1, a, h2{
 /* styling for containers in home */
 .contain1 {
   display: block;
-  width: 70%;
-  height: 300px;
-  margin-top: 650px;
+  width: 65%;
+  height: 250px;
+  margin-top: 600px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 7px 16px -2px rgba(0,0,0,.3);
@@ -151,8 +151,8 @@ h1, a, h2{
 }
 .contain2 {
   display: block;
-  width: 70%;
-  height: 300px;
+  width: 65%;
+  height: 250px;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -168,8 +168,8 @@ h1, a, h2{
 }
 .contain3 {
   display: block;
-  width: 70%;
-  height: 300px;
+  width: 65%;
+  height: 250px;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
