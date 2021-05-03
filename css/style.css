@@ -300,7 +300,18 @@ h1, a, h2{
   color: #2b4251;
 
 }
-
+.buttonP {
+  margin: 30px auto 0 auto;
+  width: 170px; height: 50px;
+  background: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  color: #37474f;
+  
+}
 /* styling for profile */
 .wrapper {
   display: table-cell;
