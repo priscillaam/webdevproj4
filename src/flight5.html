@@ -15,9 +15,9 @@
             </h1>
             <nav>
                 <ul>
-                    <li class=""><a href="./index.html">Home</a></li>
-                    <li class="active"><a href="flights.html">Flights</a></li>
-                    <li><a href="./parking.php">Parking</a></li>
+                    <li class=""><a href="./index.html"><b>Home</b></a></li>
+                    <li class="active"><a href="flights.html"><b>Flights</b></a></li>
+                    <li><a href="./parking.php"><b>Parking</b></a></li>
                   </ul>
             </nav>
         </header>
@@ -25,7 +25,7 @@
           <br>
           <br>
           <center>
-            <u><h2>FLIGHT INFORMATION:</h2></u>
+            <u><h1>FLIGHT INFORMATION:</h1></u>
             <h3>One Way Trip | Non-stop</h3>
             <img alt="ATL - LAX" src="../img/5.jpg">
             <h3>Total Flight Time: <u>~5 Hours</u><h3>
@@ -33,7 +33,7 @@
             <h3>ARRIVAL: Los Angeles International Airport, Las Angeles, California on <u>April 10, 2021 @ 08:30 EST</u></h3>
             <h2 id="priceGenerator"></h2>
             <br>
-            <button class="buttonP"><a href="seatings5.html" style="color:white">CHOOSE YOUR SEATS</a></button>
+            <b><a href="seatings5.html" class="styleButton">CHOOSE YOUR SEAT</a></b>
           </center>
           <br>
           <br>
@@ -47,9 +47,9 @@
               document.getElementById("priceGenerator").innerHTML = "PRICE: ~$" + number;
             }
 
-            localStorage.setItem("price", "$" + number + ".00");
+            localStorage.setItem("price", number);
           </script>
-                
+
           <script src = "https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
         </div>
     </body>
