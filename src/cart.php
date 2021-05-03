@@ -41,7 +41,13 @@
               <td><div id="result4"></div></td>
             </tr>
           </table>
-
+            <br>
+          <br>
+          <br>
+          <hr>
+          <br>
+          <br>
+          <br>
           <table>
             <tr>
               <th>Ticket</th>
@@ -59,6 +65,7 @@
 
             </tr>
           </table>
+          <button class="buttonP" type='submit' name='add'><a style="color: white" href="./checkout.html">Checkout</a></button>
         </center>
           <script>
             document.getElementById("result1").innerHTML = localStorage.getItem("flight");
