@@ -38,6 +38,13 @@ header {
   box-shadow: 0 7px 16px -5px rgba(0,0,0,.3);
 }
 
+.styleButton {
+  border-style: double;
+  padding: 15px;
+  font-size: 15px;
+  background-color: lightblue;
+}
+
 .chooseSeatButton {
   border-style: double;
   padding: 15px;
@@ -68,7 +75,7 @@ nav, nav ul {
   margin: 0;
   padding: 0;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 525;
 
 }
 
@@ -305,10 +312,10 @@ h1, a, h2{
   border: none;
   border-radius: 5px;
   color: white;
-  
+
 }
 
-                /* 
+                /*
                   css unused for parking selection
 
                   .select:after {
@@ -372,8 +379,9 @@ h1, a, h2{
 .shoppingCart {
   display: block;
   width: 75%;
-  height: 750px;
+  height: 490px;
   margin: 250px auto;
+  margin-bottom: 100px;
   box-shadow: 0 7px 16px -2px rgba(0,0,0,.3);
   background-color: #b6d6c9;
   border-radius: 15px 15px 15px 15px;
@@ -381,10 +389,10 @@ h1, a, h2{
   text-align: center;
   font-family: sans-serif;
   color: #37474f;
-  
+
 }
 table, td, tr, th{
-  border: none;
+  border: 1px solid black;
 }
 
 /* cc validator */
