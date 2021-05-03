@@ -15,7 +15,6 @@
                     <li class=""><a href="./index.html">Home</a></li>
                     <li><a href="./flights.html">Flights</a></li>
                     <li class="active"><a href="./parking.php">Parking</a></li>
-                    <li><a href="./both.php">Logout</a></li>
 
                     
                   </ul>
@@ -27,27 +26,20 @@
         <div class="parking">
             <div>
                 <center>
-                    <p class="parkP" style="font-size: 1.5em;">This is extra text/fill in. Prices standard: 7$ vip: 15$</p>
+                    <p class="parkP" style="font-size: 1.5em;">We offer standard parking at $7 and VIP parking at $15. VIP includes larger spaces for your vehicle and is more accessible to exits. </p>
                 </center>
             </div>
             <div class="left">
                 <div class="left">
                 <p class="parkP">Select the amount of tickets you are purchasing: </p>
                 <p class="parkP">Select the type of ticket you are purchasing: </p>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                
-                <p class="parkP">Total: </p>
+
                 </div>
                 <div class="right">
                 <div class="total">
 
                     
-                    <p class="parkP" id="total"></p>
+                    <p class="parkP"></p>
                 </div>
                 </div>
             </div>
@@ -61,7 +53,7 @@
 
                     <div class="select">
                         <label>
-                            <select name="Ticket" id="ticket" onchange="total();">
+                            <select>
                                 <option selected> -- select -- </option>
                                 <option value="standard">Standard</option>
                                 <option value="vip">VIP</option>
@@ -72,11 +64,10 @@
                     
                     
                     <br>
-                    <br>
-                    <br>
+
                     <button class="buttonP" type='submit' name='add'>Add to cart</button>
                     <br>
-                    <a href="./checkout.html" class="buttonP" >Checkout</a>
+                    <button class="buttonP" type='submit' name='add'><a style="color: #37474f;"href="./checkout.html">Checkout</a></button>
                 </form>
             </div>
         </div>
