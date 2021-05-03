@@ -365,7 +365,6 @@ h1, a, h2{
   text-align: center;
 }
 /* cart styling */
-
 .shoppingCart {
   display: block;
   width: 75%;
@@ -375,6 +374,11 @@ h1, a, h2{
   background-color: #b6d6c9;
   border-radius: 15px 15px 15px 15px;
   padding: 25px 40px;
+  text-align: center;
+  
+}
+table, td, tr, th{
+  border: none;
 }
 
 /* cc validator */
