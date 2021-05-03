@@ -332,6 +332,18 @@ h1, a, h2{
   align-content: center;
   text-align: center;
 }
+/* cart styling */
+
+.shoppingCart {
+  display: block;
+  width: 75%;
+  height: 750px;
+  margin: 250px auto;
+  box-shadow: 0 7px 16px -2px rgba(0,0,0,.3);
+  background-color: #b6d6c9;
+  border-radius: 15px 15px 15px 15px;
+  padding: 25px 40px;
+}
 
 /* cc validator */
 input, .cc{
