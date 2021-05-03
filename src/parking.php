@@ -37,12 +37,12 @@
 
             <div class="topP">
                 <label class="parkP" style="font-size: 2em; margin-right: 335px;">Standard</label>
-                <label class="parkP" style="font-size: 2em; margin-right: 475px;">$7</label>
+                <label class="parkP" style="font-size: 2em; margin-right: 450px;">$7</label>
                 <button class="buttonP" onclick="setStoragePStand();" type='submit' id='standard'>Add to cart</button>
             </div>
             <div class="botP">
                 <label class="parkP" style="font-size: 2em; margin-right: 400px;">VIP</label>
-                <label class="parkP" style="font-size: 2em; margin-right: 475px; ">$15</label>
+                <label class="parkP" style="font-size: 2em; margin-right: 450px; ">$15</label>
                 <button class="buttonP" onclick="setStoragePVIP();" type='submit' id='vip'>Add to cart</button>
             </div>
 
