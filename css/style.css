@@ -304,13 +304,13 @@ h1, a, h2{
 .buttonP {
   margin: 30px auto 0 auto;
   width: 170px; height: 50px;
-  background: white;
+  background: #37474f;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 17px;
   border: none;
   border-radius: 5px;
-  color: #37474f;
+  color: white;
   
 }
 /* styling for profile */
