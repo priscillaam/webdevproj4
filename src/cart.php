@@ -24,9 +24,10 @@
             </nav>
         </header>
         <div class="shoppingCart">
-          <br>
           <h1>Your Shopping Cart</h1>
+          <hr>
           <center>
+            <h2><u>Flight:</u></h2>
             <table>
             <tr>
               <th>Flight</th>
@@ -41,43 +42,37 @@
               <td><div id="result4"></div></td>
             </tr>
           </table>
-            <br>
-          <br>
           <br>
           <hr>
-          <br>
-          <br>
-          <br>
+          <h2><u>Parking:</u></h2>
           <table>
             <tr>
               <th>Ticket</th>
               <th>Price</th>
-
             </tr>
             <tr>
               <td><div id="r1"></div></td>
               <td><div id="r2"></div></td>
-
             </tr>
             <tr>
               <td><div id="r3"></div></td>
               <td><div id="r4"></div></td>
-
             </tr>
           </table>
-          <button class="buttonP" type='submit' name='add'><a style="color: white" href="./checkout.html">Checkout</a></button>
+          <br>
+          <hr>
+          <button class="buttonP" type='submit' name='add'><a style="color: white" href="checkout.php">Checkout</a></button>
         </center>
           <script>
             document.getElementById("result1").innerHTML = localStorage.getItem("flight");
             document.getElementById("result2").innerHTML = localStorage.getItem("destination");
             document.getElementById("result3").innerHTML = localStorage.getItem("seat");
-            document.getElementById("result4").innerHTML = localStorage.getItem("price");
+            document.getElementById("result4").innerHTML = "$" + localStorage.getItem("price") + ".00";
 
             document.getElementById("r1").innerHTML = localStorage.getItem("name");
-            document.getElementById("r2").innerHTML = localStorage.getItem("prices");
-
+            document.getElementById("r2").innerHTML = "$" + localStorage.getItem("prices") + ".00";
             document.getElementById("r3").innerHTML = localStorage.getItem("namev");
-            document.getElementById("r4").innerHTML = localStorage.getItem("pricesv");
+            document.getElementById("r4").innerHTML = "$" + localStorage.getItem("pricesv") + ".00";
           </script>
           <script src = "https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
           <script src = "../js/script.js"></script>
