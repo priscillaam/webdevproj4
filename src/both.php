@@ -19,8 +19,9 @@ $cookie = 0;
 
  <form method = "post" action = "register.php">
 	<h1>Register</h1>
-	 <input type="hidden" name="regF" value="yes" >
-	<input type="text" id="personimg" name="name" placeholder="Name">
+	 <input type="text" name="fname" placeholder="First Name">
+	 <input type="text" name="lname" placeholder="Last Name">
+	 <input type="text" id="personimg" name="username" placeholder="Username">
 	<input type="password" class="passimg" name="password" id="password" placeholder="Password">
 	<input type="email"  class="emailimg" name="email" placeholder="Email">
 	<input type="phone" id="phoneimg" name="phone" placeholder="Phone Number">
