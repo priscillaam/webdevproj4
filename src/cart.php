@@ -23,7 +23,7 @@
                   </ul>
             </nav>
         </header>
-        <div class="cartSummary">
+        <div class=".shoppingCart">
           <br>
           <h1>Your Shopping Cart</h1>
           <center>
