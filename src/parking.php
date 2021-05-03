@@ -12,7 +12,7 @@
             <h1 class="logo"><a href="">Ecommerce Site Name</a></h1>
             <h1 class="cart">
                 <a href="./cart.html">
-                    <ion-icon name="basket"></ion-icon><span>0</span>
+                    <ion-icon name="basket"></ion-icon>
                 </a>
             </h1>
             <nav>
