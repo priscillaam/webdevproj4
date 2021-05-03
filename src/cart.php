@@ -23,7 +23,7 @@
                   </ul>
             </nav>
         </header>
-        <div class=".shoppingCart">
+        <div class="shoppingCart">
           <br>
           <h1>Your Shopping Cart</h1>
           <center>
@@ -41,12 +41,36 @@
               <td><div id="result4"></div></td>
             </tr>
           </table>
+
+          <table>
+            <tr>
+              <th>Ticket</th>
+              <th>Price</th>
+
+            </tr>
+            <tr>
+              <td><div id="r1"></div></td>
+              <td><div id="r2"></div></td>
+
+            </tr>
+            <tr>
+              <td><div id="r3"></div></td>
+              <td><div id="r4"></div></td>
+
+            </tr>
+          </table>
         </center>
           <script>
             document.getElementById("result1").innerHTML = localStorage.getItem("flight");
             document.getElementById("result2").innerHTML = localStorage.getItem("destination");
             document.getElementById("result3").innerHTML = localStorage.getItem("seat");
             document.getElementById("result4").innerHTML = localStorage.getItem("price");
+
+            document.getElementById("r1").innerHTML = localStorage.getItem("name");
+            document.getElementById("r2").innerHTML = localStorage.getItem("prices");
+
+            document.getElementById("r3").innerHTML = localStorage.getItem("namev");
+            document.getElementById("r4").innerHTML = localStorage.getItem("pricesv");
           </script>
           <script src = "https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
           <script src = "../js/script.js"></script>
