@@ -405,6 +405,12 @@ label .ccT {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    background-color:#b6d6c9;
+    margin: 150px 175px;
+  
+  box-shadow: 0 7px 16px -2px rgba(0,0,0,.3);
+  background-color: #b6d6c9;
+  border-radius: 15px 15px 15px 15px;
 
 }
 .flex-container > .box {
@@ -412,16 +418,17 @@ label .ccT {
     width: 300px;
     margin: 20px;
     text-align: center;
-      height:inherit;
     /* line-height: 75px; */
     font-size: 20px;
 }
 .headers {
+  display:block;
     text-align: center;
     font-size:28px;
 }
 
 .words{
+  display:block;
   font-size:25px;
 }
 
