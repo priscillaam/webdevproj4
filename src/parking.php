@@ -11,7 +11,7 @@
         <header>
             <h1 class="logo"><a href="">Ecommerce Site Name</a></h1>
             <h1 class="cart">
-                <a href="./cart.html">
+                <a href="./cart.php">
                     <ion-icon name="basket"></ion-icon>
                 </a>
             </h1>
