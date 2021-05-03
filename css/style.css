@@ -76,6 +76,10 @@ nav ul li {
 
 }
 
+table, th, td {
+  border: 1px solid black;
+}
+
 nav ul li a {
   display: block;
   margin: 12px 0 0 45px;
