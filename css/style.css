@@ -114,6 +114,8 @@ h1, a, h2{
   padding: 40px 80px;
 }
 .flights {
+  font-family: sans-serif;
+  color: #37474f;
   display: block;
   width: 90%;
   margin: 390px auto;
@@ -376,6 +378,8 @@ h1, a, h2{
   border-radius: 15px 15px 15px 15px;
   padding: 25px 40px;
   text-align: center;
+  font-family: sans-serif;
+  color: #37474f;
   
 }
 table, td, tr, th{
