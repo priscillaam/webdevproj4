@@ -48,7 +48,7 @@ header {
 .cart a {
   float: right;
   padding: 0px 10px;
-  color: black;
+  color: #37474f;
   text-transform: uppercase;
 
 }
@@ -56,7 +56,7 @@ header {
   float: left;
   padding: 12px 40px;
   border-right: 1px solid #b4b4b4;
-  color: black;
+  color: #37474f;
   font-family: "Job Clarendon";
   text-transform: uppercase;
   font-size: 20px;
@@ -80,7 +80,7 @@ nav ul li a {
   display: block;
   margin: 12px 0 0 45px;
   padding-bottom: 12px;
-  color: black;
+  color: #37474f;
   font-size: 12px;
   font-family: Roboto;
 }
@@ -94,7 +94,7 @@ h1, a, h2{
   text-decoration: none;
   outline: none;
   transition: all .25s ease-in-out;
-  color: black;
+  color: #37474f;
 }
 
 /* styling for main pages content area: parking, flights, home, lots */
