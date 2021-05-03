@@ -15,7 +15,6 @@
                     <li class=""><a href="./index.html">Home</a></li>
                     <li><a href="./flights.html">Flights</a></li>
                     <li class=""><a href="./parking.php">Parking</a></li>
-                    <li><a href="./both.php">Logout</a></li>
 
                     
                   </ul>
@@ -24,9 +23,16 @@
             
         </header>
 
-        <div class="summary">
-            <h1> Cart </h1>
+        <div class="shoppingCart">
+            <h1> Shopping Cart </h1>
+            <div class="add">
+                <!-- this is where we want to add each product -->
+                should be in this format
+                shoppingCart()
+                $product_id    $quantity   updateQty()  $price
 
+                (floating to right) ---- >
+            </div>
         </div>
         
         
