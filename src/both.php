@@ -31,8 +31,7 @@ $cookie = 0;
 <div class="form-container sign-in-container">
  <form method = "post" action = "login.php">
 		<h1>Login</h1>
-	 <input type="hidden" name="loginF" value="yes" >
-	<input type="email" class="emailimg" name="email" placeholder="Email">
+	<input type="text" id="personimg" name="username" placeholder="Username">
 	<input type="password" class="passimg" name="password" placeholder="Password">
 	<a href="#">Forgot Your Password?</a>
 
