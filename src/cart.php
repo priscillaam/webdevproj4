@@ -10,7 +10,11 @@
       <body class="cartB">
         <header>
             <h1 class="logo"><a href="">Ecommerce Site Name</a></h1>
-            <h1 class="cart"><a href="">Cart</a></h1>
+            <h1 class="cart">
+                <a href="./cart.html">
+                    <ion-icon name="basket"></ion-icon><span>0</span>
+                </a>
+            </h1>
             <nav>
                 <ul>
                     <li class=""><a href="index.html">Home</a></li>
@@ -44,6 +48,8 @@
             document.getElementById("result3").innerHTML = localStorage.getItem("seat");
             document.getElementById("result4").innerHTML = localStorage.getItem("price");
           </script>
+          <script src = "https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+          <script src = "../js/script.js"></script>
         </div>
     </body>
 </html>
