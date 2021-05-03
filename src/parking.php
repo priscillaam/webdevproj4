@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <head>
         <title>
-            Parking and Flight Bookings
+            M&M | Parking
         </title>
 
         <link rel="stylesheet" href="../css/style.css">
@@ -9,7 +9,7 @@
     </head>
     <body class="parkB">
         <header>
-            <h1 class="logo"><a href="">Ecommerce Site Name</a></h1>
+            <h1 class="logo"><a href="./index.html">miles&miles</a></h1>
             <h1 class="cart">
                 <a href="./cart.php">
                     <ion-icon name="basket"></ion-icon>
